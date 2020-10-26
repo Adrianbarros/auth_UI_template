@@ -2,13 +2,7 @@ import React, { Component } from 'react'
 import logo from './logo.svg';
 import './App.scss';
 import { Login, Register } from './components/authForms/index';
-// function App() {
-//   return (
-//     <div className="App">
-//       <Login />
-//     </div>
-//   );
-// }
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -16,22 +10,35 @@ class App extends React.Component {
       isLogginActive: true,
     }
   }
+  componentDidMount() {
+    //Add .right by default
+    this.rightSide.classList.add("right");
+  }
+
   changeState() {
     const { isLogginActive } = this.state;
-    // if(isLogginActive)
+
+    if (isLogginActive) {
+      this.rightSide.classList.remove("right");
+      this.rightSide.classList.add("left");
+    } else {
+      this.rightSide.classList.remove("left");
+      this.rightSide.classList.add("right");
+    }
+    this.setState(prevState => ({ isLogginActive: !prevState.isLogginActive }));
   }
   render() {
-    const { isLogginActive } = this.state
-    const current = isLogginActive ? "register" : "login"
-    const currentActive = isLogginActive ? "Login" : " Register"
+    const { isLogginActive } = this.state;
+    const current = isLogginActive ? "register" : "login";
+    const currentActive = isLogginActive ? "Login" : " Register";
     return (
       <div className="App">
         <div className='login'>
-          <div className='container'>
-            {isLogginActive && <Login containerRef={(ref) => this.current = ref} />}
-            {!isLogginActive && <Register containerRef={(ref) => this.current = ref} />}
+          <div className='container' ref={ref => (this.container = ref)}>
+            {isLogginActive && <Login containerRef={ref => (this.current = ref)} />}
+            {!isLogginActive && <Register containerRef={ref => (this.current = ref)} />}
           </div>
-          <RightSide current={this.current} containerRef={ref => this.RightSide = ref} onClick={this.changeState.bind(this)} />
+          <RightSide current={current} currentActive={currentActive} containerRef={ref => this.rightSide = ref} onClick={this.changeState.bind(this)} />
         </div>
       </div>
     )
