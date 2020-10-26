@@ -3,14 +3,14 @@ import PropTypes from 'prop-types'
 
 import loginImg from '../../login.svg'
 
-export class login extends Component {
+export class Login extends Component {
     constructor(props) {
         super(props);
     }
 
     render() {
         return (
-            <div className='base-container'>
+            <div className='base-container' ref={this.props.containerRef}>
                 <div className='header'>login</div>
                 <div className='content'>
                     <div className="image">
@@ -28,7 +28,7 @@ export class login extends Component {
                     </div>
                 </div>
                 <div className='footer'>
-                    <botton type='button' className="btn">Login</botton>
+                    <button type='button' className='btn' >Login</button>
                 </div>
             </div>
         )

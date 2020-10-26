@@ -1,25 +1,53 @@
+import React, { Component } from 'react'
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import { Login, Register } from './components/authForms/index';
+// function App() {
+//   return (
+//     <div className="App">
+//       <Login />
+//     </div>
+//   );
+// }
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLogginActive: true,
+    }
+  }
+  changeState() {
+    const { isLogginActive } = this.state;
+    // if(isLogginActive)
+  }
+  render() {
+    const { isLogginActive } = this.state
+    const current = isLogginActive ? "register" : "login"
+    const currentActive = isLogginActive ? "Login" : " Register"
+    return (
+      <div className="App">
+        <div className='login'>
+          <div className='container'>
+            {isLogginActive && <Login containerRef={(ref) => this.current = ref} />}
+            {!isLogginActive && <Register containerRef={(ref) => this.current = ref} />}
+          </div>
+          <RightSide current={this.current} containerRef={ref => this.RightSide = ref} onClick={this.changeState.bind(this)} />
+        </div>
+      </div>
+    )
+  }
+}
 
-function App() {
+const RightSide = props => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="right-side" ref={props.containerRef} onClick={props.onClick}>\
+      <div className="inner-container">
+        <div className="text">{props.current}
+        </div>
+      </div>
+
     </div>
-  );
+  )
 }
 
 export default App;
