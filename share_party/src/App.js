@@ -28,7 +28,7 @@ class App extends React.Component {
   }
   render() {
     const { isLogginActive } = this.state;
-    const current = isLogginActive ? "register" : "login";
+    const current = isLogginActive ? "Register" : "login";
     const currentActive = isLogginActive ? "Login" : " Register";
     return (
       <div className="App">
@@ -46,7 +46,7 @@ class App extends React.Component {
 
 const RightSide = props => {
   return (
-    <div className="right-side" ref={props.containerRef} onClick={props.onClick}>\
+    <div className="right-side" ref={props.containerRef} onClick={props.onClick}>
       <div className="inner-container">
         <div className="text">{props.current}
         </div>
