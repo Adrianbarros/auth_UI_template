@@ -1,2 +1,2 @@
 # share_party
-//gif
+![](auth_gif.gif)
