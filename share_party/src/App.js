@@ -28,6 +28,7 @@ class App extends React.Component {
   }
   render() {
     const { isLogginActive } = this.state;
+    //changes the writting in the button
     const current = isLogginActive ? "Register" : "Login";
     const currentActive = isLogginActive ? "Login" : " Register";
     return (
