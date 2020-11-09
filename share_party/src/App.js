@@ -44,7 +44,7 @@ class App extends React.Component {
     )
   }
 }
-
+//returns the right button 
 const RightSide = props => {
   return (
     <div className="right-side" ref={props.containerRef} onClick={props.onClick}>
