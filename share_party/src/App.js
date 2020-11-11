@@ -34,7 +34,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <div className='login'>
-          {/* Logic to change the container */}
+          {/* Logic to change the container of the form*/}
           <div className='container' ref={ref => (this.container = ref)}>
             {isLogginActive && <Login containerRef={ref => (this.current = ref)} />}
             {!isLogginActive && <Register containerRef={ref => (this.current = ref)} />}
