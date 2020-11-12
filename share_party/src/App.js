@@ -10,6 +10,7 @@ class App extends React.Component {
       isLogginActive: true,
     }
   }
+  //adding the change button 
   componentDidMount() {
     this.rightSide.classList.add("right");
   }
