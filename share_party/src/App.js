@@ -14,7 +14,7 @@ class App extends React.Component {
   componentDidMount() {
     this.rightSide.classList.add("right");
   }
-
+  //managing the state
   changeState() {
     const { isLogginActive } = this.state;
 
