@@ -7,6 +7,7 @@ export class Register extends Component {
     constructor(props) {
         super(props);
     }
+    //todo: call the backend to complete auth
 
     render() {
         return (
