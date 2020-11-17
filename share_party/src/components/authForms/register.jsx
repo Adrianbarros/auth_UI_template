@@ -8,7 +8,7 @@ export class Register extends Component {
         super(props);
     }
     //todo: call the backend to complete auth
-    //
+    //todo: autologin
 
     render() {
         return (
