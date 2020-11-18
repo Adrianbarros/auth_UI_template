@@ -7,6 +7,7 @@ export class Login extends Component {
     constructor(props) {
         super(props);
     }
+    //todo: autologin
 
     render() {
         return (
