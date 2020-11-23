@@ -7,7 +7,7 @@ export class Register extends Component {
     constructor(props) {
         super(props);
     }
-    //todo: call the backend to complete auth
+    //todo: call the backend to complete authen
     render() {
         return (
             <div className='base-container' ref={this.props.containerRef}>
